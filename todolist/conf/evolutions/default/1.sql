@@ -1,0 +1,15 @@
+
+CREATE TABLE IF NOT EXISTS `scalatestdb`.`todo` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL DEFAULT NULL,
+  `isComplete` TINYINT(4) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`));
+
+ 
+CREATE TABLE  `etudiant` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `nomEtudiant` VARCHAR(45) NULL DEFAULT NULL,
+  `prenomEtudiant` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`));
+
+ 
