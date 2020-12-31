@@ -11,19 +11,25 @@ import slick.jdbc.MySQLProfile.api._
 case class Etudiant(
   id: Long,
   nomEtudiant: String,
-  prenomEtudiant: String
+  prenomEtudiant: String,
+  niveauEtude:String,
+  id_classe:Long
   
 )
 case class EtudiantFormData(
   nomEtudiant: String,
-  prenomEtudiant: String
-  
+  prenomEtudiant: String,
+  niveauEtude:String,
+  id_classe:Long
+
 )
 object EtudiantForm {
   val form = Form(
     mapping(
       "nomEtudiant" -> nonEmptyText,
-      "prenomEtudiant" -> nonEmptyText
+      "prenomEtudiant" -> nonEmptyText,
+      "niveauEtude" -> nonEmptyText,
+      "id_classe" -> longNumber,
     )(EtudiantFormData.apply)(EtudiantFormData.unapply)
   )
 }
@@ -32,8 +38,11 @@ class EtudiantTableDef(tag: Tag) extends Table[Etudiant](tag, "etudiant") {
   def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
   def nomEtudiant = column[String]("nomEtudiant")
   def prenomEtudiant = column[String]("prenomEtudiant")
- 
-    def * = (id, nomEtudiant, prenomEtudiant) <> ((Etudiant.apply _).tupled, Etudiant.unapply _)
+  def niveauEtude =column[String]("niveauETude")
+  def id_classe =column[Long]("id_classe")
+  def * = (id, nomEtudiant, prenomEtudiant,niveauEtude,id_classe) <> ((Etudiant.apply _).tupled, Etudiant.unapply _)
+  def classefk = foreignKey("classe",id_classe,TableQuery[ClasseTableDef])(_.id)
+
 }
 
 class EtudiantList @Inject()(

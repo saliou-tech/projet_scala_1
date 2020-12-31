@@ -19,7 +19,7 @@ etudiantService: EtudiantService
     implicit val todoFormat = Json.format[Etudiant]
     def getAll = Action {
       
-        val todo = new Etudiant(1, "Mansour", "soow")
+        val todo = new Etudiant(1, "Mansour", "soow","Master1",1)
         Ok(Json.toJson(todo))
     }
     def add() = Action.async { implicit request: Request[AnyContent] =>
@@ -30,7 +30,13 @@ etudiantService: EtudiantService
             Future.successful(BadRequest("Error!"))
           },
           data => {
-            val newEtudiantItem = Etudiant(0, data.nomEtudiant, data.prenomEtudiant)
+            val newEtudiantItem = Etudiant(
+              0,
+             data.nomEtudiant, 
+             data.prenomEtudiant,
+             data.niveauEtude,
+             data.id_classe
+            )
             etudiantService.addItem(newEtudiantItem).map( _ => Redirect(routes.EtudiantController.getAll))
           })
       }

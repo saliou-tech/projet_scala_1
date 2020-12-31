@@ -5,15 +5,51 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
-#GET     /api/etudiant               controllers.api.EtudiantController.getAll
+#GET     /api/etudiant              controllers.api.EtudiantController.getAll
 GET     /api/todos                  controllers.api.TodoController.getAll
 
 GET     /api/etudiant               controllers.APIS.EtudiantController.getAll 
+
+GET     /api/professeur             controllers.APIS.ProfesseurController.getAll 
+
+GET     /api/evaluation             controllers.APIS.EvaluationController.getAll 
+
+
+GET     /api/salle                  controllers.APIS.SalleController.getAll
+
+GET     /api/classe                 controllers.APIS.ClasseController.getAll 
+
+
+GET     /api/matiere                controllers.APIS.MatiereController.getAll 
+
+GET     /api/cours                  controllers.APIS.CoursController.getAll 
+
+
+
+
 
 GET     /api/todos/:id              controllers.api.TodoController.getById(id: Long)
 POST    /api/todos/add              controllers.api.TodoController.add
 
 POST    /api/etudiant/add           controllers.APIS.EtudiantController.add
+
+POST    /api/professeur/add         controllers.APIS.ProfesseurController.add
+
+POST    /api/evaluation/add         controllers.APIS.EvaluationController.add
+
+
+POST    /api/salle/add              controllers.APIS.SalleController.add
+
+POST    /api/classe/add             controllers.APIS.ClasseController.add
+
+
+POST    /api/matiere/add            controllers.APIS.MatiereController.add
+
+POST    /api/cours/add              controllers.APIS.CoursController.add
+
+
+
+
 
 PUT     /api/todos/update/:id       controllers.api.TodoController.update(id: Long)
 DELETE  /api/todos/delete/:id       controllers.api.TodoController.delete(id: Long)
