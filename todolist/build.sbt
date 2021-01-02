@@ -19,6 +19,11 @@ libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.41"
 libraryDependencies += "com.typesafe.play" %% "play-slick" % "4.0.2"
 libraryDependencies += "com.typesafe.play" %% "play-slick-evolutions" % "4.0.2" 
 
+libraryDependencies += filters
+
+
+
+
 //database connectiity
 // Default database configuration using MySQL database engine
 // Connect to scalatestdb as testuser

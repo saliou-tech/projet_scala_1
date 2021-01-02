@@ -9,7 +9,9 @@
             "E:\\MASTER IA\\programmation_fontionelle\\projet_scala\\todolist\\project\\src\\main\\scala",
             "E:\\MASTER IA\\programmation_fontionelle\\projet_scala\\todolist\\project\\src\\main\\java",
             "E:\\MASTER IA\\programmation_fontionelle\\projet_scala\\todolist\\project\\src\\main\\scala-sbt-1.0",
-            "E:\\MASTER IA\\programmation_fontionelle\\projet_scala\\todolist\\project\\target\\scala-2.12\\sbt-1.0\\src_managed\\main"
+            "E:\\MASTER IA\\programmation_fontionelle\\projet_scala\\todolist\\project\\target\\scala-2.12\\sbt-1.0\\src_managed\\main",
+            "E:\\MASTER IA\\programmation_fontionelle\\projet_scala\\todolist\\project\\FrontendBuild.scala",
+            "E:\\MASTER IA\\programmation_fontionelle\\projet_scala\\todolist\\project\\FrontendCommands.scala"
         ],
         "dependencies": [
             

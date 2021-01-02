@@ -31,7 +31,7 @@ object EvaluationForm {
     mapping(
       "devoir1" -> longNumber,
       "devoir2" -> longNumber,
-     "examen"-> longNumber,
+    "examen"-> longNumber,
       "id_etudiant" -> longNumber,
       "id_matiere"-> longNumber
     )(EvaluationFormData.apply)(EvaluationFormData.unapply)

@@ -4,8 +4,23 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
+#GET      /api                      controllers.HomeController.index
 #GET     /api/etudiant              controllers.api.EtudiantController.getAll
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Serve index page from public directory
+GET     /api                        controllers.FrontendController.index()
+
+# An example route (Prefix all API routes with apiPrefix defined in application.conf)
+GET     /api/summary                controllers.HomeController.appSummary
+
+# Serve static assets under public directory
+#GET     /*file                      controllers.FrontendController.assetOrDefault(file)
+
+
 GET     /api/todos                  controllers.api.TodoController.getAll
 
 GET     /api/etudiant               controllers.APIS.EtudiantController.getAll 
