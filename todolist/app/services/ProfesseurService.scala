@@ -9,5 +9,8 @@ class ProfesseurService @Inject() (items: ProfesseurList){
 def addItem(prof: Professeur): Future[String] = {
     items.add(prof)
   }
+  def listAllItems: Future[Seq[Professeur]] = {
+    items.listAll
+  }
 
 }

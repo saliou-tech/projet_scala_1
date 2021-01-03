@@ -17,11 +17,11 @@ professeurService: ProfesseurService
 ) extends AbstractController(cc){
     
     implicit val todoFormat = Json.format[Professeur]
-    def getAll = Action {
-      
-        val todo = new Professeur(1, "Mansour", "soow","Maitre conference")
-        Ok(Json.toJson(todo))
-    }
+   def getAll() = Action.async { implicit request: Request[AnyContent] =>
+        professeurService.listAllItems map { items =>
+          Ok(Json.toJson(items))
+        }
+      }
     def add() = Action.async { implicit request: Request[AnyContent] =>
         ProfesseurForm.form.bindFromRequest.fold(
           // if any error in submitted data

@@ -19,4 +19,8 @@ export class ProfesseurService {
     console.log(prof);
     return this.http.post(this.baseurl + '/api/professeur/add', prof);
   }
+  public readProfs(): Observable<any> {
+    console.log();
+    return this.http.get(this.baseurl + '/api/professeur', { headers: this.httpHeaders });
+  }
 }

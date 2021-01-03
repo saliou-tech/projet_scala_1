@@ -59,4 +59,7 @@ class ProfesseurList @Inject()(
         }
       }
   }
+  def listAll: Future[Seq[Professeur]] = {
+    dbConfig.db.run(ProfesseurList.result)
+  }
 }
